@@ -1,4 +1,5 @@
 export interface Matiere {
-    id: number;
-    libelle: string;
+
+    id?: number;
+  libelle: string;
 }

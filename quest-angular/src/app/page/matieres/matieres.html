@@ -1,0 +1,17 @@
+<nav>
+  <a [routerLink]="['/']">Accueil</a>
+  <a [routerLink]="['/matieres']">Liste des matieres</a>
+</nav>
+
+<p>matieres works!</p>
+
+<input [(ngModel)]="newMatiere.libelle" placeholder="Nouvelle matière">
+<button (click)="addMatiere()">Ajouter</button>
+
+<ul>
+  <li *ngFor="let matiere of matieres$ |async">
+    {{ matiere.libelle }}
+    
+    <button (click)="deleteMatiere(matiere.id!)">Supprimer</button>
+  </li>
+</ul>

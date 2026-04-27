@@ -1,13 +1,10 @@
 import { Routes } from '@angular/router';
-import { HomePage } from './page/home-page/home-page';
-import { MatierePage } from './page/matiere-page/matiere-page';
-import { LoginPage } from './page/login-page/login-page';
-import { authGuard } from './guard/auth-guard';
+import { Home } from './page/home/home';
+import { Matieres } from './page/matieres/matieres';
+import { Login } from './page/login/login';
 
 export const routes: Routes = [
-    { path: 'home', component: HomePage, canActivate: [ authGuard ] },
-    { path: 'matiere', component: MatierePage, canActivate: [ authGuard ] },
-
-    { path: 'login', component: LoginPage },
-    { path: '', redirectTo: 'home', pathMatch: 'full' }
+    {path: '', redirectTo: 'login', pathMatch: 'full'},
+    {path: 'matieres', component: Matieres},
+    {path: 'login', component: Login}
 ];

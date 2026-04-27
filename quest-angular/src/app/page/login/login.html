@@ -1,0 +1,24 @@
+<p>login works!</p>
+<h2>Connexion</h2>
+
+<form [formGroup]="loginForm">
+
+    <div class="text-danger">
+        <input class="form-control" type="text" formControlName="username" placeholder="Username">
+
+        <div class="text-danger" *ngIf="loginForm.get('username')?.touched && loginForm.get('username')?.invalid">
+            <small>Le username est obligatoire</small>
+        </div>
+    </div>
+
+
+    <div class="text-danger">
+        <input class="form-control"  type="password" formControlName="password" placeholder="Password">
+
+        <div class="text-danger" *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">
+            <small>Le password est obligatoire</small>
+        </div>
+    </div>
+
+  <button class="btn btn-primary w-100" type="submit"  (click)="connexion()" [disabled]="loginForm.invalid">Se connecter</button>
+</form>
