@@ -26,8 +26,7 @@ services:
       interval: 5s
 
   quest-boot:
-    image: quest-boot:latest
-    #build: ./biblio
+    image: tim/quest-boot:latest
     container_name: quest-boot
     networks:
       - quest
@@ -46,7 +45,7 @@ services:
       #condition: service_healthy
 
   quest-angular:
-    image: ajc/quest-angular:latest
+    image: tim/quest-angular:latest
     #le chemin de l'image dans le dockerfile
     #build: ./biblio-angular
     container_name: quest-angular
